@@ -1,4 +1,6 @@
-﻿using static Learn2Slither.Option;
+﻿using Learn2Slither.Core;
+using Learn2Slither.Display;
+using static Learn2Slither.Option;
 
 class Program
 {
@@ -7,12 +9,19 @@ class Program
         /* Options */
         int sessions = 1;
         int size = 10;
-        bool visualOn = true;
         string? savePath = null;
         string? loadPath = null;
+        bool visualOn = true;
         bool dontLearn = false;
         bool stepByStep = false;
 
-        ParseArgs(args, ref sessions, ref size, ref visualOn, ref savePath, ref loadPath, ref dontLearn, ref stepByStep);
+        ParseArgs(args, ref sessions, ref size, ref visualOn, 
+        ref savePath, ref loadPath, ref dontLearn, ref stepByStep);   
+
+        /* Game */
+        var board = new Board(size);
+        board.Initialize();
+
+        ConsoleDisplay.Print(board);
     }
 }
