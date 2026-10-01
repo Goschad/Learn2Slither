@@ -23,5 +23,16 @@ class Program
         board.Initialize();
 
         ConsoleDisplay.Print(board);
+
+        GameWindow? window = visualOn ? new GameWindow(board) : null;
+
+        if (window == null)
+            ConsoleDisplay.Print(board);
+
+        while (window is { IsOpen: true })
+        {
+            window.PollEvents();
+            window.Render();
+        }
     }
 }
