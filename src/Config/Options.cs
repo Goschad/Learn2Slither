@@ -38,7 +38,7 @@ public static class Option
         return value;
     }
 
-    public static void ParseArgs(string[] args, ref int sessions, ref int size, ref bool visualOn, ref string savePath, ref string loadPath, ref bool dontLearn, ref bool stepByStep)
+    public static void ParseArgs(string[] args, ref int sessions, ref int size, ref bool visualOn, ref string savePath, ref string loadPath, ref bool dontLearn, ref bool stepByStep, ref bool human, ref bool sans)
     {
         HashSet<string> seen = new();
 
@@ -82,6 +82,14 @@ public static class Option
 
                 case "-step-by-step":
                     stepByStep = true;
+                    break;
+
+                case "-human":
+                    human = true;
+                    break;
+
+                case "-sans":
+                    sans = true;
                     break;
 
                 default:

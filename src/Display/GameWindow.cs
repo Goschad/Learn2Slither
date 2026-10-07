@@ -31,11 +31,11 @@ public partial class GameWindow
 
     public bool IsOpen => _window.IsOpen;
 
-    public GameWindow(Board board)
+    public GameWindow(Board board, bool sans)
     {
         _board = board;
         _font = TryLoadFont();
-        LoadTextures();
+        LoadTextures(sans);
 
         uint gridPixels = (uint)(board.Size * CellSize);
         var mode = new VideoMode(new Vector2u(gridPixels + HudWidth, gridPixels));
@@ -66,7 +66,7 @@ public partial class GameWindow
     public void Render()
     {
         _window.Clear(BackgroundColor);
-        DrawGrid();
+        DrawBoard();
         DrawHud();
         _window.Display();
     }
@@ -79,7 +79,7 @@ public partial class GameWindow
         {
             _window.DispatchEvents();
             _window.Clear(BackgroundColor);
-            DrawGrid();
+            DrawBoard();
             DrawHud();
             DrawEndOverlay();
             _window.Display();
