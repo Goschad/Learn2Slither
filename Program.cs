@@ -2,6 +2,7 @@
 using Learn2Slither.Core;
 using Learn2Slither.Audio;
 using Learn2Slither.Display;
+using Learn2Slither.Interpreter;
 using static Learn2Slither.Option;
 
 class Program
@@ -117,10 +118,17 @@ class Program
     static void RunDefault(int size, bool visualOn, bool sans)
     {
         var board = NewBoard(size);
+        var stateBuilder = new StateBuilder(board);
         ConsoleDisplay.Print(board);
+
+        using var audio = new AudioPlayer();
+
+        Console.WriteLine($"{stateBuilder.GetState()}");
 
         if (!visualOn)
             return;
+
+        
 
         var window = new GameWindow(board, sans);
         while (window.IsOpen)
