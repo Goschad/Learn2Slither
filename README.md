@@ -1,10 +1,14 @@
-# Learn2Slither 🐍
+# Learn2Slither
 
 **A Snake game that learns through reinforcement learning.**
 
 Learn2Slither is a C#/.NET 8 implementation of Snake featuring a **Q-learning agent**. The agent trains over repeated game sessions, receives rewards from its environment, and learns which actions to choose. The project also includes a graphical interface, a human-play mode, and command-line options for training and inspecting the agent.
 
 Developed as part of the **42 Learn2Slither** project.
+
+## Gameplay
+
+![Learn2Slither Gameplay](assets/gif/gameplay.gif)
 
 ## Features
 
