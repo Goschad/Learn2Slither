@@ -1,0 +1,74 @@
+
+# ===========================
+# C# / .NET Build Output
+# ===========================
+bin/
+obj/
+Debug/
+Release/
+artifacts/
+TestResults/
+
+# ===========================
+# IDE Configuration
+# ===========================
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ===========================
+# Rider / ReSharper
+# ===========================
+_ReSharper*/
+*.DotSettings.user
+*.sln.iml
+
+# ===========================
+# Logs and Temporary Files
+# ===========================
+*.log
+*.tmp
+*.temp
+*.cache
+*.bak
+*.swp
+*~
+
+# ===========================
+# Operating System Files
+# ===========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===========================
+# Test Coverage
+# ===========================
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# ===========================
+# Local Secrets
+# ===========================
+.env
+.env.*
+!.env.example
+appsettings.Development.local.json
+
+# ===========================
+# Learn2Slither
+# ===========================
+# Generated Q-learning models
+models/*.txt
+
+# Keep the models directory
+!models/.gitkeep
